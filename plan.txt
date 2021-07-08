@@ -1,0 +1,10 @@
+1. create docker environment - connect with mongodb
+	need to spin up redis. mongodb, express
+2. figure out redis - add it to the docker environment
+3. set up express server
+4. create simple http requests
+
+make sure to have error checks if certain things don't exist in redis or db (may not be necessary)
+
+If I had more time:
+-add error checking to make sure data is in redis prior to pulling then pull from mongodb as a backup -> can maybe implement this
