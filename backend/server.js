@@ -6,10 +6,15 @@ const mongoose = require('mongoose');
 
 const port = 5000;
 
-mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true, useUnifiedTopology: true })
+	.then(() => console.log('connected to db'))
+	.catch(err => console.error(error));
+
+/*
 const db = mongoose.connection;
 db.on('error', (error) => console.error(error));
 db.on('open', () => console.log('connected to db'));
+*/
 
 app.use(express.json());
 
