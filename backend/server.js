@@ -24,8 +24,4 @@ app.use('/api/user', userRouter);
 const postRouter = require('./routes/post');
 app.use('/api/post', postRouter);
 
-app.get('/', (req, res) => {
-    res.send('Hello world\n');
-});
-
 app.listen(port, () => console.log('App listening on port ' + port));
