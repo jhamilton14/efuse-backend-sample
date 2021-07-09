@@ -26,12 +26,13 @@ router.post('/', async (req, res) => {
 
 // getting one specific post
 router.get('/:postId', async (req, res) => {
-  return res.json(Helper.getEntry(res, req.params.postId, 'post'));
+  return res.set(200).json(await Helper.getEntry(res, req.params.postId, 'post'));
 });
 
 // updating a specific subset of fields
 router.patch('/:postId', async (req, res) => {
 	try {
+		// grabs the desired user first then updates necessary fields
 		const postRef = await Post.findById(req.params.postId);
 
 		if(postRef === null) {

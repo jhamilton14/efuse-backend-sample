@@ -4,20 +4,15 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 
-const port = 5000;
+const port = 5000; // desired port
 
 mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true, useUnifiedTopology: true })
 	.then(() => console.log('connected to db'))
-	.catch(err => console.error(error));
-
-/*
-const db = mongoose.connection;
-db.on('error', (error) => console.error(error));
-db.on('open', () => console.log('connected to db'));
-*/
+	.catch(error => console.error(error));
 
 app.use(express.json());
 
+// uses the router files for both user and post
 const userRouter = require('./routes/user');
 app.use('/api/user', userRouter);
 
