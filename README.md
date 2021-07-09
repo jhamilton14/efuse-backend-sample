@@ -4,8 +4,10 @@ Backend work sample for eFuse.
 Run Instructions
 ------------
 To run the dockerized environment, type the following commands:
-	$ cd backend
-	$ docker-compose docker-compose up -d --build
+```
+cd backend
+docker-compose docker-compose up -d --build
+```
 
 Design Desicions
 ------------
