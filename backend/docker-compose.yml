@@ -1,0 +1,31 @@
+version: '3'
+services:
+  node:
+    restart: always
+    build: .
+    ports:
+      - 5000:5000
+    volumes:
+      - ./:/code
+    environment:
+      - REDIS_URL=redis://cache
+      - MONGO_URL=mongodb://mongo:27017/userPosts
+  mongo:
+    image: mongo
+    ports:
+      - 27017:27017
+    volumes:
+      - mongodb:/data/db
+  redis:
+    image: redis
+    command: redis-server
+    ports:
+      - 6379:6379
+    volumes:
+      - redis-data:/data
+      - redis-conf:/usr/local/etc/redis/redis.conf
+  
+volumes:
+ mongodb:
+ redis-data:
+ redis-conf:
