@@ -1,7 +1,7 @@
 // file that contains middlewear for updating and retrieving entries in the database
 
 const Redis = require('redis');
-const redisClient = Redis.createClient();
+const redisClient = Redis.createClient({ host: 'redis' });
 
 const Post = require('../models/post');
 const User = require('../models/user');
