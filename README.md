@@ -8,6 +8,7 @@ To run the dockerized environment, type the following commands:
 $ cd backend
 $ docker-compose docker-compose up -d --build
 ```
+When testing endpoints, use port 5000.
 
 Design Desicions
 ------------
