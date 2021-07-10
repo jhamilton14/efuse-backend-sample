@@ -8,7 +8,32 @@ To run the dockerized environment, type the following commands:
 $ cd backend
 $ docker-compose docker-compose up -d --build
 ```
-When testing endpoints, use port 5000.
+When testing endpoints, use <b>port 5000</b>.
+
+### Endpoints:
+User:
+* POST /api/user - Adds a new user record to the database
+* GET /api/user/:userId - Retrieve a user record for the given userId
+* GET /api/user/:userId/posts - Return posts for a user
+* PATCH /api/user/:userId- Update a subset of fields for a given user
+User object: { 
+	firstName: String,
+	lastName: String,
+	email: String,
+	username: String,
+	createdAt: Date
+}
+
+Post:
+* POST /api/post - Adds a new post record to the database
+* GET /api/post/:postId - Retrieve a post record for the given postId
+* PATCH /api/post/:postId- Update a subset of fields for a given post
+Post object: {
+	user: <ref:user._id>,
+	title: String,
+	content: String,
+	createdAt: Date
+}
 
 Design Desicions
 ------------
