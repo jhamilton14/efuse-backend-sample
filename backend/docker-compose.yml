@@ -9,6 +9,7 @@ services:
       - ./:/code
     environment:
       - REDIS_URL=redis://cache
+      - MONGO_URL=mongodb://mongo:27017/userPosts
   mongo:
     image: mongo
     ports:
